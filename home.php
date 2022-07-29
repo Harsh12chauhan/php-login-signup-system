@@ -1,8 +1,6 @@
 <?php
 session_start();
-// function button1() {
-//   echo "This is Button1 that is selected";
-// }
+// include_once('config.php');
 ?>
 
 <!DOCTYPE html>
@@ -29,19 +27,21 @@ session_start();
           mobile();
         }
         function water() {
-          ++$_SESSION['count'];
+         $_SESSION['num']++;
           $product = "water";
           $price = 20;
             array_push($_SESSION['price'],$price); 
             array_push($_SESSION['arr'],$product); 
           }
           function charger() {
+         $_SESSION['count1']++;
             $product = "charger";
             $price = 200;
             array_push($_SESSION['price'],$price); 
             array_push($_SESSION['arr'],$product); 
           }
           function mobile() {
+         $_SESSION['count2']++;
             $product = "mobile";
             $price = 5500;
             array_push($_SESSION['price'],$price); 
@@ -60,7 +60,7 @@ session_start();
 <div class="card" style="width: 18rem;">
    <h1>Charger</h1>
   <div class="card-body">
-    <h5 class="card-title">$150</h5>
+    <h5 class="card-title">$200</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <form  method="POST">
 <input type="submit" class="form-control btn btn-primary"  name="charger" id="charger" value="Add"/>  </div>
@@ -76,6 +76,7 @@ session_start();
 </form>
 </div>
 </div>
+
 <div class="container">
   <form action="logout.php" method="POST">
     <input type="submit" class="btn btn-dark" value="logout"/>

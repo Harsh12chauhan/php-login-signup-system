@@ -1,5 +1,7 @@
 <?php
      session_start();
+            $array = $_SESSION['arr'];
+            $array = array_unique($array);
 ?>
 
 
@@ -101,6 +103,12 @@
             margin:15px;
             float: right;
         }
+        @media print {
+               .noprint {
+                cursor:pointer;
+                  visibility: hidden;
+               }
+            }
     </style>
 </head>
 <body>
@@ -151,14 +159,22 @@
            </thead>
            <tbody>
             <?php
-            foreach ($_SESSION['arr']  as $index => $result){ 
            
-            echo "<tr>";
-            echo    "<td>".$result."</td>";
-            echo    "<td>".$_SESSION['count']."</td>";
-            echo    "<td>".$_SESSION['price'][$index]."</td>";
-            echo " </tr>";
-        }
+                foreach ($array as $key => $value) {
+                    echo "<tr>";
+                    echo    "<td>".$value."</td>";
+                    if ($value == "water") {
+                        echo  "<td>".$_SESSION['num']."</td>";
+                    }
+                    if ($value == "charger") {
+                        echo  "<td>".$_SESSION['count1']."</td>";    
+                    }
+                    if ($value == "mobile") {
+                        echo  "<td>".$_SESSION['count2']."</td>";
+                    }
+                    echo    "<td>".$_SESSION['price'][$key]."</td>";
+                    echo " </tr>";
+                }
         ?>
         </tbody>
         </table>
@@ -185,7 +201,10 @@
         </div>      
     </div>      
     <div class="btn" >
-        <button>Print</button>
+    <form  >
+        <input type="submit" class="noprint" onClick="window.print()"  value="Print"/> 
+        </form>
+        </div>
     </div>
 </body>
 </html>

@@ -13,7 +13,7 @@ if(mysqli_num_rows($result)>0){
     while($r = mysqli_fetch_array($result)) {
         if ($r['email'] == $email && $r['upassword'] == $upassword) {
             $_SESSION['upassword'] = $r['upassword'];
-            header("location: welcome.php");
+            header("location: home.php");
         }
     }
     echo "<h1> Invalid Credentails</h1>";
