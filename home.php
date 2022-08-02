@@ -76,7 +76,33 @@ session_start();
 </form>
 </div>
 </div>
-
+<!-- <div class="d-flex justify-content-evenly">
+<div class="card" style="width: 18rem;">
+   <h1>Charger</h1>
+  <div class="card-body">
+    <h5 class="card-title">$200</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <form  method="POST">
+<input type="submit" class="form-control btn btn-primary"  name="charger" id="charger" value="Add"/>  </div>
+</form>
+</div><div class="card" style="width: 18rem;">
+   <h1>Charger</h1>
+  <div class="card-body">
+    <h5 class="card-title">$200</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <form  method="POST">
+<input type="submit" class="form-control btn btn-primary"  name="charger" id="charger" value="Add"/>  </div>
+</form>
+</div><div class="card" style="width: 18rem;">
+   <h1>Charger</h1>
+  <div class="card-body">
+    <h5 class="card-title">$200</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <form  method="POST">
+<input type="submit" class="form-control btn btn-primary"  name="charger" id="charger" value="Add"/>  </div>
+</form>
+</div>
+</div> -->
 <div class="container">
   <form action="logout.php" method="POST">
     <input type="submit" class="btn btn-dark" value="logout"/>

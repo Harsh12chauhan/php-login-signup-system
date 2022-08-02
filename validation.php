@@ -11,8 +11,9 @@ $result = mysqli_query($_SESSION['conn'],$sql);
 
 if(mysqli_num_rows($result)>0){
     while($r = mysqli_fetch_array($result)) {
-        if ($r['email'] == $email && $r['upassword'] == $upassword) {
-            $_SESSION['upassword'] = $r['upassword'];
+            if ($r['email'] == $email && $r['upassword'] == $upassword) {
+                $_SESSION['upassword'] = $r['upassword'];
+                    $_SESSION['sno'] = $r['sno'];
             header("location: home.php");
         }
     }
